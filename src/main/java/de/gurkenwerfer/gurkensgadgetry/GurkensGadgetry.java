@@ -1,10 +1,11 @@
-package de.gurkenwerfer.toolkit;
+package de.gurkenwerfer.gurkensgadgetry;
 
 import com.mojang.logging.LogUtils;
 
-import de.gurkenwerfer.toolkit.commands.CamClip;
-import de.gurkenwerfer.toolkit.modules.*;
-import de.gurkenwerfer.toolkit.modules.BedrockESP.BedrockESP;
+import de.gurkenwerfer.gurkensgadgetry.commands.AutoClip;
+import de.gurkenwerfer.gurkensgadgetry.commands.CamClip;
+import de.gurkenwerfer.gurkensgadgetry.modules.*;
+import de.gurkenwerfer.gurkensgadgetry.modules.BedrockESP.BedrockESP;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.commands.Commands;
 import meteordevelopment.meteorclient.systems.modules.Category;
@@ -22,18 +23,17 @@ public class GurkensGadgetry extends MeteorAddon {
         // Modules
         Modules.get().add(new NoChestRender());
         Modules.get().add(new DubCounter());
-        Modules.get().add(new AutoItemMove());
         Modules.get().add(new BedrockESP());
-        Modules.get().add(new Gurkwalk());
         Modules.get().add(new Gurkfly());
         Modules.get().add(new PacketLogger());
-        Modules.get().add(new FakeCreativeBypass());
         Modules.get().add(new WorldGuardBypass());
-
+        Modules.get().add(new BoomESP());
+        Modules.get().add(new BlastGuard());
+        Modules.get().add(new NoCollision());
+        Modules.get().add(new NoWorldBorder());
         // Commands
-
-        // just use meteor until I fix this
         Commands.add(new CamClip());
+        Commands.add(new AutoClip());
 
     }
     @Override
@@ -45,6 +45,6 @@ public class GurkensGadgetry extends MeteorAddon {
     }
     @Override
     public String getPackage() {
-        return "de.gurkenwerfer.toolkit";
+        return "de.gurkenwerfer.gurkensgadgetry";
     }
 }
